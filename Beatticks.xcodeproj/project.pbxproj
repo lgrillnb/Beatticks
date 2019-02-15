@@ -13,6 +13,7 @@
 		8A44FE722216A29000222458 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A44FE702216A29000222458 /* LaunchScreen.storyboard */; };
 		8A44FE7A2216A44C00222458 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A44FE792216A44C00222458 /* Main.storyboard */; };
 		8A44FE7C2216B70900222458 /* processing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A44FE7B2216B70900222458 /* processing.swift */; };
+		8A44FE7F2216BB9100222458 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A44FE7E2216BB9100222458 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		8A44FE732216A29000222458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A44FE792216A44C00222458 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8A44FE7B2216B70900222458 /* processing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = processing.swift; sourceTree = "<group>"; };
+		8A44FE7E2216BB9100222458 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		8A44FE802216BB9100222458 /* Beatticks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Beatticks.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A44FE7F2216BB9100222458 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 			children = (
 				8A44FE662216A28E00222458 /* Beatticks */,
 				8A44FE652216A28E00222458 /* Products */,
+				8A44FE7D2216BB9100222458 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +61,7 @@
 		8A44FE662216A28E00222458 /* Beatticks */ = {
 			isa = PBXGroup;
 			children = (
+				8A44FE802216BB9100222458 /* Beatticks.entitlements */,
 				8A44FE672216A28F00222458 /* AppDelegate.swift */,
 				8A44FE692216A28F00222458 /* ViewController.swift */,
 				8A44FE7B2216B70900222458 /* processing.swift */,
@@ -65,6 +71,14 @@
 				8A44FE732216A29000222458 /* Info.plist */,
 			);
 			path = Beatticks;
+			sourceTree = "<group>";
+		};
+		8A44FE7D2216BB9100222458 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A44FE7E2216BB9100222458 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +113,11 @@
 				TargetAttributes = {
 					8A44FE632216A28E00222458 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -278,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Beatticks/Beatticks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PV32JR7NM;
 				INFOPLIST_FILE = Beatticks/Info.plist;
@@ -296,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Beatticks/Beatticks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7PV32JR7NM;
 				INFOPLIST_FILE = Beatticks/Info.plist;
