@@ -36,7 +36,7 @@ class ViewController: UIViewController {
                 guard success else {
                     // Perform proper error handling here...
                     fatalError("*** An error occurred while saving the " +
-                        "workout: \(error?.localizedDescription)")
+                        "workout: \(error?.localizedDescription ?? "")")
                 }
             }
             // Add optional, detailed information for each time interval

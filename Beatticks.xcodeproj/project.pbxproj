@@ -12,6 +12,7 @@
 		8A44FE6F2216A29000222458 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A44FE6E2216A29000222458 /* Assets.xcassets */; };
 		8A44FE722216A29000222458 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A44FE702216A29000222458 /* LaunchScreen.storyboard */; };
 		8A44FE7A2216A44C00222458 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A44FE792216A44C00222458 /* Main.storyboard */; };
+		8A44FE7C2216B70900222458 /* processing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A44FE7B2216B70900222458 /* processing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8A44FE712216A29000222458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A44FE732216A29000222458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A44FE792216A44C00222458 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8A44FE7B2216B70900222458 /* processing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = processing.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				8A44FE672216A28F00222458 /* AppDelegate.swift */,
 				8A44FE692216A28F00222458 /* ViewController.swift */,
+				8A44FE7B2216B70900222458 /* processing.swift */,
 				8A44FE792216A44C00222458 /* Main.storyboard */,
 				8A44FE6E2216A29000222458 /* Assets.xcassets */,
 				8A44FE702216A29000222458 /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				8A44FE6A2216A28F00222458 /* ViewController.swift in Sources */,
 				8A44FE682216A28F00222458 /* AppDelegate.swift in Sources */,
+				8A44FE7C2216B70900222458 /* processing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
