@@ -17,21 +17,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //sets the textField
         self.outputTextField.text = ""
         self.outputTextField.isEditable = false
         
+        /*
+        //--------------------------------------------------
+        //Setting the Test-samples begins
         func applicationShouldRequestHealthAuthorization(application: UIApplication) {
             healthStore.handleAuthorizationForExtension { (success, error) -> Void in
-                //...
-                
-                
-                //let energyBurned = HKQuantity(unit: HKUnit.kilocalorie(), doubleValue: 425.0)
-                
-                //let distance = HKQuantity(unit: HKUnit.mile(), doubleValue: 3.2)
-                
                 let start = Date()
                 let end = Date().addingTimeInterval(100)
-                // Provide summary information when creating the workout.
+                
                 let run = HKWorkout(activityType: HKWorkoutActivityType.running, start: start, end: end)
                 
                 guard let heartRateType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else {
@@ -39,7 +36,6 @@ class ViewController: UIViewController {
                 }
                 
                 self.healthStore.requestAuthorization(toShare: [HKObjectType.workoutType(), heartRateType], read:[HKObjectType.workoutType(), heartRateType], completion:{(success, error) in
-                    // Exception-code
                     
                     // Save the workout before adding detailed samples.
                     self.healthStore.save(run) { (success, error) -> Void in
@@ -72,8 +68,11 @@ class ViewController: UIViewController {
                 })
             }
         }
-        
         applicationShouldRequestHealthAuthorization(application: UIApplication.shared)
+        */
+        //--------------------------------------------------
+        //Till here: adding Test-samples
+        //--------------------------------------------------
         
         
         let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
@@ -94,19 +93,15 @@ class ViewController: UIViewController {
                     let quantity = (quantitySample as! HKQuantitySample).quantity
                     let heartRateUnit = HKUnit(from: "count/min")
                     
-                    csvString += "\(timeFormatter.string(from: quantitySample.startDate)),\(dateFormatter.string(from: quantitySample.startDate)),\(quantity.doubleValue(for: heartRateUnit))\n"
+                    csvString += "\(timeFormatter.string(from: quantitySample.startDate)), \(dateFormatter.string(from: quantitySample.startDate)),  \(quantity.doubleValue(for: heartRateUnit))\n"
                     print("\(timeFormatter.string(from: quantitySample.startDate)),\(dateFormatter.string(from: quantitySample.startDate)),\(quantity.doubleValue(for: heartRateUnit))")
-                    
                 }
                 
                 DispatchQueue.main.async {
                     self.outputTextField.insertText(csvString)
                 }
-                
             })
-        
             healthStore.execute(query)
         }
-        
     }
 }
