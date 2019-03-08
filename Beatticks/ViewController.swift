@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         /*
         //--------------------------------------------------
         //Setting the Test-samples begins
+        //--------------------------------------------------
         func applicationShouldRequestHealthAuthorization(application: UIApplication) {
             healthStore.handleAuthorizationForExtension { (success, error) -> Void in
                 let start = Date()
@@ -78,7 +79,7 @@ class ViewController: UIViewController {
         let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
         
         if (HKHealthStore.isHealthDataAvailable()){
-            var csvString = "Time,Date,Heartrate(BPM)\n"
+            var formattedString = "Time,Date,Heartrate(BPM)\n"
             
             let sortByTime = NSSortDescriptor(key:HKSampleSortIdentifierEndDate, ascending:false)
             let timeFormatter = DateFormatter()
@@ -93,15 +94,22 @@ class ViewController: UIViewController {
                     let quantity = (quantitySample as! HKQuantitySample).quantity
                     let heartRateUnit = HKUnit(from: "count/min")
                     
-                    csvString += "\(timeFormatter.string(from: quantitySample.startDate)), \(dateFormatter.string(from: quantitySample.startDate)),  \(quantity.doubleValue(for: heartRateUnit))\n"
-                    print("\(timeFormatter.string(from: quantitySample.startDate)),\(dateFormatter.string(from: quantitySample.startDate)),\(quantity.doubleValue(for: heartRateUnit))")
+                    formattedString += "\(timeFormatter.string(from: quantitySample.startDate)), \(dateFormatter.string(from: quantitySample.startDate)),  \(quantity.doubleValue(for: heartRateUnit))\n"
                 }
-                
+                print(formattedString)
                 DispatchQueue.main.async {
-                    self.outputTextField.insertText(csvString)
+                    self.outputTextField.insertText(formattedString)
                 }
             })
             healthStore.execute(query)
         }
+        //--------------------------------------------------
+        //Till here: reading stored heartrate data
+        //--------------------------------------------------
+        
+        //--------------------------------------------------
+        //Starting a live-session
+        //--------------------------------------------------
+        
     }
 }
